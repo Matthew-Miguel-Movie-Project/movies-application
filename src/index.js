@@ -22,7 +22,7 @@ function renderMovies() {
                 <p>Title: ${title}</p>
                 <p>Rating: ${rating}</p>
                 <p>Genre: ${genre}</p>
-                <button class="btn btn-primary edit editButton" data-toggle="collapse" data-target="#collapse" value="${id}">Edit</button>
+                <button id="editButton" class="btn btn-primary edit" value="${id}">Edit</button>
                 <button id="deleteButton" class="btn btn-danger delete" value="${id}">Delete</button>
                 </div>
                 </div>`);
@@ -33,8 +33,34 @@ function renderMovies() {
 getMovies().then((movies) => {
     $('.movie-database').html('Here are all the movies:');
     movies.forEach(({title, rating, id, genre}) => {
-        $('.movies').append(`<div class="card h-100"><div class="card-body"><p>Id: ${id}</p><p>Title: ${title}</p><p>Rating: ${rating}</p><p>Genre: ${genre}</p><button data-toggle="collapse" data-target="#collapse" aria-expanded="false" aria-controls="collapseExample" id="editButton" class="btn btn-primary edit" value="${id}">Edit</button><button id="deleteButton" class="btn btn-danger delete" value="${id}">Delete</button></div></div>`)
+        $('.movies').append(`
+            <div class="card h-100">
+            <div class="card-body">
+            <p>Id: ${id}</p>
+            <p>Title: ${title}</p>
+            <p>Rating: ${rating}</p>
+            <p>Genre: ${genre}</p>
+            <button id="editButton" class="btn btn-primary edit" value="${id}">Edit</button>
+            <button id="deleteButton" class="btn btn-danger delete" value="${id}">Delete</button>
+            <form class="form1">
+                <div class="form-group">
+                    <label for="inputTitle">Title</label>
+                    <input type="text" class="form-control editInputTitle" aria-describedby="emailHelp">
+                </div>
+                <div class="form-group">
+                    <label for="inputRating">Rating</label>
+                    <input type="text" class="form-control editInputRating">
+                </div>
+                <div class="form-group">
+                    <label for="inputGenre">Genre</label>
+                    <input type="text" class="form-control editInputGenre">
+                </div>
+            </form>
+            </div>
+        </div>`)
     });
+
+
 }).catch((error) => {
     alert('Oh no! Something went wrong.\nCheck the console for details.');
     console.log(error);
@@ -61,20 +87,15 @@ $('.movies').on('click', '.delete', function (event) {
 });
 
 // this edit is for the cards
-// $('.editButton').on('click', function (event){
-//   let editId = $(event.target).val();
-//   $('.editForm').toggle(editId);
-// });
-$('#exampleModal').on('shown.bs.modal', function (event) {
-    $('#exampleModal').trigger('focus');
-    console.log("test");
-    // let button = $(event.relatedTarget); // Button that triggered the modal
-    // let recipient = button.data('whatever');// Extract info from data-* attributes
-    // // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-    // // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-    // let modal = $(this);
-    // modal.find('.modal-title').text('New message to ' + recipient);
-    // modal.find('.modal-body input').val(recipient)
+$('.movies').on('click', '.edit', function (event){
+  let editId = $(event.target).val();
+  // $('.editForm').toggle();
+    getMovie(editId).then((movie) => {
+        console.log(movie);
+        // $(".formButton").click(function() {
+        //     $('.form1').toggle();
+        // });
+    });
 });
 
 // this edit is for the form

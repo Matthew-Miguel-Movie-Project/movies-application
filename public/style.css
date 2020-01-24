@@ -71,9 +71,9 @@
     list-style: none;
 }
 
-/*.hidden {*/
-/*    display: none;*/
-/*}*/
+.form1 {
+    display: none;
+}
 
 .formContainer {
     padding: 5em;
