@@ -1,28 +1,20 @@
-/*html, body {*/
-/*    height: 100%;*/
-/*}*/
-
-/*.container {*/
-/*    position: relative;*/
-/*    top: 50%;*/
-/*    transform: translateY(-100%);*/
-/*    text-align: center;*/
-/*}*/
-
-@media (min-width: 34em) {
-    .card-columns {
-        -webkit-column-count:4;
-        -moz-column-count:4;
-        column-count:4;
-    }
+/* Gets rid of the unordered list dots */
+.list-group {
+    list-style: none;
 }
 
-.loader,
-.loader:after {
+/* Puts a padding around the forms container*/
+.formContainer {
+    padding: 5em;
+}
+
+/* Loading CSS */
+.loader, .loader:after {
     border-radius: 50%;
     width: 10em;
     height: 10em;
 }
+
 .loader {
     margin: 60px auto;
     font-size: 10px;
@@ -38,6 +30,17 @@
     -webkit-animation: load8 1.1s infinite linear;
     animation: load8 1.1s infinite linear;
 }
+
+#loadingDiv {
+    position:absolute;;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color:#000;
+}
+
+/* Keyframes */
 @-webkit-keyframes load8 {
     0% {
         -webkit-transform: rotate(0deg);
@@ -58,23 +61,12 @@
         transform: rotate(360deg);
     }
 }
-#loadingDiv {
-    position:absolute;;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background-color:#000;
-}
 
-.list-group {
-    list-style: none;
-}
-
-/*.hidden {*/
-/*    display: none;*/
-/*}*/
-
-.formContainer {
-    padding: 5em;
+/* Media queries */
+@media (min-width: 34em) {
+    .card-columns {
+        -webkit-column-count:4;
+        -moz-column-count:4;
+        column-count:4;
+    }
 }

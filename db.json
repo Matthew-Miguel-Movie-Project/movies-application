@@ -79,10 +79,16 @@
       "id": 14
     },
     {
-      "title": "",
-      "rating": "",
-      "genre": "",
+      "title": "Forest Gump",
+      "rating": "2",
+      "genre": "Animation",
       "id": 15
+    },
+    {
+      "title": "Nemo",
+      "rating": "5",
+      "genre": "Comedy",
+      "id": 16
     }
   ]
 }
