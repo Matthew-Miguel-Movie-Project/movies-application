@@ -19,7 +19,7 @@ function renderMovies() {
                 <p>Rating: ${rating}</p>
                 <p>Genre: ${genre}</p>
                 <button class="btn btn-primary edit editButton" data-toggle="collapse" data-target="#collapse" value="${id}">Edit</button>
-                <button id="deleteButton" class="btn btn-danger delete" value="${id}">Delete</button>
+                <button id="deleteButton" class="btn btn-danger" value="${id}">Delete</button>
                 </div>
                 </div>`);
         });
@@ -57,7 +57,9 @@ $('#addMovie').click(() => {
 });
 
 //== Delete movies click function ==//
-$('.movies').on('click', '.delete', function (event) {
+$('.movies').on('click', function (event) {
+    addLoader();
+    location.reload();
     let deleteId = $(event.target).val();
     deleteMovie(deleteId);
     renderMovies();
@@ -71,22 +73,18 @@ $('.movies').on('click', '.delete', function (event) {
 // });
 
 //== This edit click function might be useful for something else. ==//
-// $('.editMovie').on('click', '.edit', function (e) {
-//     e.preventDefault();
-//     $("#editForm").toggle();
-//     let newMovieName = $('#editTitle').val();
-//     let newRating = $('#editRating').val();
-//     let newGenre = $('#editGenre').val();
-//     // $('#editTitle').val('');
-//     // $('#editRating').val('');
-//     // $('#editGenre').val('');
-//     let movieData = {title: newMovieName, rating: newRating, genre: newGenre};
-//     let editId = id;
-//     console.log(movieData);
-//     editMovie(editId, movieData);
-//     // .then(console.log('It worked')).catch(console.log('Did not work'));
-//     renderMovies();
-// });
+$('.editMovie').on('click', function (e) {
+    e.preventDefault();
+    let newMovieName = $('#editTitle').val();
+    let newRating = $('#editRating').val();
+    let newGenre = $('#editGenre').val();
+    let movieData = {title: newMovieName, rating: newRating, genre: newGenre};
+    let editId = id;
+    console.log(movieData);
+    editMovie(editId, movieData);
+    // .then(console.log('It worked')).catch(console.log('Did not work'));
+    renderMovies();
+});
 
 //== Function for loading screen ==//
 function addLoader() {
@@ -94,11 +92,10 @@ function addLoader() {
     $(window).on('load', function () {
         setTimeout(removeLoader, 2000); //wait for page load PLUS two seconds.
     });
-}
-
-function removeLoader() {
-    $("#loadingDiv").fadeOut(500, function () {
-        // fadeOut complete. Remove the loading div
-        $("#loadingDiv").remove(); //makes page more lightweight
-    });
+    function removeLoader() {
+        $("#loadingDiv").fadeOut(500, function () {
+            // fadeOut complete. Remove the loading div
+            $("#loadingDiv").remove(); //makes page more lightweight
+        });
+    }
 }

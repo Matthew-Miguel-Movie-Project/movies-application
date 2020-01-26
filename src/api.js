@@ -23,7 +23,6 @@ module.exports = {
     return fetch(`/api/movies/${id}`, {
       method: 'PATCH', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(editMovie)
     })
-
   },
   deleteMovie: (id) => {
     return fetch(`/api/movies/${id}`, {
