@@ -85,10 +85,16 @@
       "id": 15
     },
     {
-      "title": "Nemo",
-      "rating": "5",
-      "genre": "Comedy",
+      "title": "Finding Nemo",
+      "rating": "3",
+      "genre": "Kids",
       "id": 16
+    },
+    {
+      "title": "Forest Gump",
+      "rating": "4",
+      "genre": "Animation",
+      "id": 17
     }
   ]
 }

@@ -27,7 +27,68 @@
         </select>
     </form>
     <button type="button" class="btn btn-success">Search</button>
+
+    <!-- Add a movie form and button -->
+    <!-- Trigger/Open The Modal -->
+    <button id="myBtn">Add a Movie</button>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="formContainer">
+                <form action="">
+                    <div class="form-group">
+                        <label for="inputTitle">Title</label>
+                        <input type="text" class="form-control" id="inputTitle">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputRating">Rating</label>
+                        <input type="text" class="form-control" id="inputRating">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputGenre">Genre</label>
+                        <input type="text" class="form-control" id="inputGenre">
+                    </div>
+                    <button id="addMovie">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit a movie form and button -->
+    <!-- Trigger/Open The Modal -->
+    <button id="myBtn2">Edit a Movie</button>
+    <!-- The Modal -->
+    <div id="myModal2" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close2">&times;</span>
+            <div class="formContainer">
+                <form action="">
+                    <div class="form-group">
+                        <label for="editIDInput">Id</label>
+                        <input type="text" class="form-control" id="editIdInput">
+                    </div>
+                    <div class="form-group">
+                        <label for="editTitle">Title</label>
+                        <input type="text" class="form-control" id="editTitle">
+                    </div>
+                    <div class="form-group">
+                        <label for="editRating">Rating</label>
+                        <input type="text" class="form-control" id="editRating">
+                    </div>
+                    <div class="form-group">
+                        <label for="editGenre">Genre</label>
+                        <input type="text" class="form-control" id="editGenre">
+                    </div>
+                    <button id="editMovie">Edit</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
+
 
 <!-- Cards with movies information -->
 <div class="movie-database"></div>
@@ -41,30 +102,9 @@
     </div>
 </div>
 
-<!-- Add a movie form and button -->
-<div class="formContainer">
-    <form action="">
-        <div class="form-group">
-            <label for="inputTitle">Title</label>
-            <input type="text" class="form-control" id="inputTitle" aria-describedby="emailHelp">
-        </div>
-        <div class="form-group">
-            <label for="inputRating">Rating</label>
-            <input type="text" class="form-control" id="inputRating">
-        </div>
-        <div class="form-group">
-            <label for="inputGenre">Genre</label>
-            <input type="text" class="form-control" id="inputGenre">
-        </div>
-        <button id="addMovie">Add New Movie</button>
-    </form>
-
-    <!-- Edit a movie form and button -->
-
-
-    <!--/////////////////////////////////////////////////// Scripts  ////////////////////////////////////////////////////-->
-    <script src="./main.js"></script>
-    <!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+<!--/////////////////////////////////////////////////// Scripts  ////////////////////////////////////////////////////-->
+<script src="./main.js"></script>
+<!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 
 </body>
 </html>
