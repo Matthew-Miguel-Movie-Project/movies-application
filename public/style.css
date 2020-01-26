@@ -1,3 +1,23 @@
+/* Body Styling */
+body {
+    background-color: #DC3545;
+    z-index: 1;
+}
+
+/* Styling for the shape of the cards */
+.movies {
+    height: 300px;
+    width: 250px;
+}
+
+/* Top container styling */
+.topContainer {
+    background-color: red;
+    padding: 1em;
+    display: flex;
+    justify-content: space-evenly;
+}
+
 /* Gets rid of the unordered list dots */
 .list-group {
     list-style: none;

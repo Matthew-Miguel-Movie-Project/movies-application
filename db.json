@@ -91,10 +91,22 @@
       "id": 16
     },
     {
-      "title": "Forest Gump",
-      "rating": "4",
-      "genre": "Animation",
+      "title": "Toy Story",
+      "rating": "3",
+      "genre": "Kids",
       "id": 17
+    },
+    {
+      "title": "Dukes of Hazard",
+      "rating": "2",
+      "genre": "Action",
+      "id": 18
+    },
+    {
+      "title": "Charlie and the Chocolate Factory",
+      "rating": "5",
+      "genre": "Kids",
+      "id": 19
     }
   ]
 }
