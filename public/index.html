@@ -11,79 +11,117 @@
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
 </head>
-<body>
+<body class="bodyStyle" id="body">
 
-<div class="div2 box" style=" display: flex; justify-content: left; ">
-    <form>
-        <label for="movie-search" class="labels"></label>
-        <input type="text" id="movie-search" class="searchBar" placeholder="Search by title, rating, or genre...">
-        <label for="movie-selection" class="labels"></label>
-        <select id="movie-selection" class="selectOptions">
-            <option>All</option>
-            <option>Title</option>
-            <option>Rating</option>
-            <option>Genre</option>
-        </select>
-    </form>
-    <button type="button" class="btn btn-success">Search</button>
-</div>
+<!-- Movies search bar and button-->
 
 
-<div class="movie-database"></div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-12 mb-1">
-            <div class="card-columns">
-                <div class="movies"></div>
+<!-- Add a movie form and button -->
+<!-- Trigger/Open The Modal -->
+<div class="topContainer" id="fixed">
+    <a href="#body"><img id="movieReelImg" src="img/icons8-film-reel-64.png" alt=""></a>
+    <a href="#body"><h1 class="webpageTitle">FilmPlex</h1></a>
+<!-- Search bar -->
+<!--    <form>-->
+<!--        <label for="movie-search" class="labels"></label>-->
+<!--        <input type="text" id="movie-search" class="searchBar" placeholder="Search by title, rating, or genre...">-->
+<!--        <label for="movie-selection" class="labels"></label>-->
+<!--        <select id="movie-selection" class="selectOptions">-->
+<!--            <option>All</option>-->
+<!--            <option>Title</option>-->
+<!--            <option>Rating</option>-->
+<!--            <option>Genre</option>-->
+<!--        </select>-->
+<!--    </form>-->
+<!--    <button type="button" class="btn btn-success">Search</button>-->
+
+<!-- Add a Movie Button -->
+    <button id="myBtn">Add a Movie</button>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="formContainer">
+                <form action="">
+                    <div class="form-group">
+                        <label for="inputTitle">Title</label>
+                        <input type="text" class="form-control" id="inputTitle">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputRating">Rating</label>
+                        <input type="text" class="form-control" id="inputRating">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputGenre">Genre</label>
+                        <input type="text" class="form-control" id="inputGenre">
+                    </div>
+                    <button id="addMovie">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit a movie form and button -->
+    <!-- Trigger/Open The Modal -->
+    <button id="myBtn2">Edit a Movie</button>
+    <!-- The Modal -->
+    <div id="myModal2" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close2">&times;</span>
+            <div class="formContainer">
+                <form action="">
+                    <div class="form-group">
+                        <label for="editIDInput">Id</label>
+                        <input type="text" class="form-control" id="editIdInput">
+                    </div>
+                    <div class="form-group">
+                        <label for="editTitle">Title</label>
+                        <input type="text" class="form-control" id="editTitle">
+                    </div>
+                    <div class="form-group">
+                        <label for="editRating">Rating</label>
+                        <input type="text" class="form-control" id="editRating">
+                    </div>
+                    <div class="form-group">
+                        <label for="editGenre">Genre</label>
+                        <input type="text" class="form-control" id="editGenre">
+                    </div>
+                    <button id="editMovie">Edit</button>
+                </form>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Adding a movie -->
-<div class="formContainer">
-    <form action="">
-        <div class="form-group">
-            <label for="inputTitle">Title</label>
-            <input type="text" class="form-control" id="inputTitle" aria-describedby="emailHelp">
-        </div>
-        <div class="form-group">
-            <label for="inputRating">Rating</label>
-            <input type="text" class="form-control" id="inputRating">
-        </div>
-        <div class="form-group">
-            <label for="inputGenre">Genre</label>
-            <input type="text" class="form-control" id="inputGenre">
-        </div>
-        <button id="addMovie">Add New Movie</button>
-    </form>
-
-    <!-- Editing a movie -->
-    <!--<div class="collapse" id="collapse">-->
-    <!--    <form action="" id="editForm">-->
-    <!--        <div class="form-group">-->
-    <!--            <label for="inputID">ID</label>-->
-    <!--            <input type="text" class="form-control" id="inputID" aria-describedby="emailHelp">-->
-    <!--        </div>-->
-    <!--        <div class="form-group">-->
-    <!--            <label for="inputTitle">Title</label>-->
-    <!--            <input type="text" class="form-control" id="editTitle" aria-describedby="emailHelp">-->
-    <!--        </div>-->
-    <!--        <div class="form-group">-->
-    <!--            <label for="inputRating">Rating</label>-->
-    <!--            <input type="text" class="form-control" id="editRating">-->
-    <!--        </div>-->
-    <!--        <div class="form-group">-->
-    <!--            <label for="inputGenre">Genre</label>-->
-    <!--            <input type="text" class="form-control" id="editGenre">-->
-    <!--        </div>-->
-    <!--        <button class="editMovie">Edit Movie</button>-->
-    <!--    </form>-->
-    <!--</div>-->
+<!-- Jumbotron -->
+<div class="jumbotron jumbotron-fluid" id="main-jumbotron">
+    <div class="container" id="jumbotron-container">
+        <h1 class="display-5 innerJumbotronText">Welcome...</h1>
+        <p class="lead innerJumbotronText">To Your Constantly Growing Movie Database.</p>
+        <p class="lead">
+            <a class="btn btn-danger btn-lg" href="#movie-database" role="button">Click Here to Start Viewing</a>
+        </p>
+    </div>
 </div>
-    <!--/////////////////////////////////////////////////// Scripts  ////////////////////////////////////////////////////-->
-    <script src="./main.js"></script>
-    <!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+<!-- Cards with movies information -->
+<div class="movie-database" id="movie-database"></div>
+<div class="cards-container d-flex justify-content-center">
+    <div class="row">
+        <div class="mb-1">
+            <div class="card-columns">
+                <div class="movies"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--/////////////////////////////////////////////////// Scripts  ////////////////////////////////////////////////////-->
+<script src="./main.js"></script>
+<!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 
 </body>
 </html>
