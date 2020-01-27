@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 //== Constant variables ==//
 const $ = require('jquery');
 const {getMovies, addMovie, editMovie, deleteMovie} = require('./api.js');
