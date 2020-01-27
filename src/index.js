@@ -15,7 +15,6 @@ renderMovies();
 //== Get movie function that goes inside different functions (like renderMovies). ==//
 function movieList() {
     getMovies().then((movies) => {
-        $('.movie-database').html('Here are all the movies:');
         movies.forEach(({title, rating, id, genre}) => {
             $('.movies').append(`
             <div class="card h-100">
@@ -127,3 +126,9 @@ window.onclick = function(event) {
         modal2.style.display = "none";
     }
 };
+
+// // topContainer scroll function
+//
+// $('.topContainer').scroll(function() {
+//     $('#FixedDiv').css('top', $(this).scrollTop());
+// });

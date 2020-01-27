@@ -11,7 +11,7 @@
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
 </head>
-<body class="bodyStyle">
+<body class="bodyStyle" id="body">
 
 <!-- Movies search bar and button -->
 <!--<div class="topContainer">-->
@@ -31,8 +31,8 @@
 
 <!-- Add a movie form and button -->
 <!-- Trigger/Open The Modal -->
-<div class="topContainer">
-    <h1 class="webpageTitle">FilmPlex</h1>
+<div class="topContainer" id="fixed">
+    <a href="#body"><h1 class="webpageTitle">FilmPlex</h1></a>
     <button id="myBtn">Add a Movie</button>
     <!-- The Modal -->
     <div id="myModal" class="modal">
@@ -91,12 +91,21 @@
         </div>
     </div>
 </div>
+
+<!-- Jumbotron -->
+<div class="jumbotron jumbotron-fluid" id="main-jumbotron">
+    <div class="container" id="jumbotron-container">
+        <h1 class="display-5">Welcome...</h1>
+        <p class="lead">To Your Constantly Growing Movie Database.</p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="#movie-database" role="button">Click Here to Start Viewing</a>
+        </p>
+    </div>
 </div>
 
-
 <!-- Cards with movies information -->
-<div class="movie-database"></div>
-<div class="container">
+<div class="movie-database" id="movie-database"></div>
+<div class="cards-container d-flex justify-content-center">
     <div class="row">
         <div class="mb-1">
             <div class="card-columns">
