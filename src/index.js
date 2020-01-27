@@ -35,10 +35,10 @@ function movieList() {
 
 //== Add movie click function ==//
 $('#addMovie').click(() => {
+    location.reload();
     let title = $('#inputTitle').val();
     let rating = $('#inputRating').val();
     let genre = $('#inputGenre').val();
-    // look up inputs
     addMovie(title, rating, genre);
 });
 
@@ -49,7 +49,7 @@ $('#editMovie').on('click', function (e) {
     const editMovieTitle = $("#editTitle");
     const editMovieRating = $("#editRating");
     const editMovieGenre = $("#editGenre");
-        editMovie(editMovieID.val(), editMovieTitle.val(), editMovieRating.val(), editMovieGenre.val());
+    editMovie(editMovieID.val(), editMovieTitle.val(), editMovieRating.val(), editMovieGenre.val());
 });
 
 //== Delete movies click function ==//
@@ -126,9 +126,3 @@ window.onclick = function(event) {
         modal2.style.display = "none";
     }
 };
-
-// // topContainer scroll function
-//
-// $('.topContainer').scroll(function() {
-//     $('#FixedDiv').css('top', $(this).scrollTop());
-// });

@@ -8,8 +8,14 @@
 
 /* Jumbotron container styling */
 .jumbotron {
-    /*margin-top: 5em;*/
-    height: 43em;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url("https://images.pexels.com/photos/390089/film-movie-motion-picture-390089.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+    background-size: cover;
+    background-position: center;
+    height: 43.1em;
+}
+
+.innerJumbotronText {
+    color: #FFFFFF;
 }
 
 #jumbotron-container {
@@ -30,6 +36,11 @@
     margin-right: 20em;
     text-shadow: 0 0 10px #FFFFFF, 2px 2px 2px rgba(160,0,0,0);
     color: #FFFFFF
+}
+
+/* Movie Reel Icon */
+#movieReelImg {
+    margin-top: -1em;
 }
 
 /* Top container styling */
@@ -58,6 +69,7 @@
     height: 50px;
     width: auto;
     border-radius: 4px;
+    margin-top: .1em;
 }
 
 #myBtn2{
@@ -67,6 +79,7 @@
     width: auto;
     margin-right: 2.4em;
     border-radius: 4px;
+    margin-top: .1em;
 }
 
  /* Cards container styling */
@@ -90,6 +103,7 @@
     border-radius: 50%;
     width: 10em;
     height: 10em;
+    z-index: 3;
 }
 
 .loader {
@@ -110,7 +124,7 @@
 }
 
 #loadingDiv {
-    position:absolute;;
+    position: fixed;
     top:0;
     left:0;
     width:100%;
